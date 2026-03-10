@@ -3,6 +3,8 @@ void main() {
   hitungBMI(170, 65, riwayat);
   hitungBMI(165, 75, riwayat);
   hitungBMI(180, 85, riwayat);
+
+  tampilkanRiwayat(riwayat);
 }
 
 void hitungBMI(double tinggiCm, double beratKg, List<Map<String, dynamic>> riwayat) {
@@ -26,4 +28,11 @@ void hitungBMI(double tinggiCm, double beratKg, List<Map<String, dynamic>> riway
     'bmi': bmi,
     'kategori': kategori
   });
+}
+
+void tampilkanRiwayat(List<Map<String, dynamic>> riwayat) {
+  print('--- Riwayat Perhitungan BMI ---');
+  for (var data in riwayat) {
+    print('Tinggi: ${data['tinggi']} cm, Berat: ${data['berat']} kg, BMI: ${data['bmi'].toStringAsFixed(2)}, Kategori: ${data['kategori']}');
+  }
 }
