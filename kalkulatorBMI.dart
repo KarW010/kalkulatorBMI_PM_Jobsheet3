@@ -1,8 +1,8 @@
 void main() {
-
+  List<Map<String, dynamic>> riwayat = [];
 }
 
-void hitungBMI(double tinggiCm, double beratKg) {
+void hitungBMI(double tinggiCm, double beratKg, List<Map<String, dynamic>> riwayat) {
   double tinggiM = tinggiCm / 100;
   double bmi = beratKg / (tinggiM * tinggiM);
   String kategori;
@@ -16,4 +16,11 @@ void hitungBMI(double tinggiCm, double beratKg) {
   } else {
     kategori = "Obesitas";
   }
+
+  riwayat.add({
+    'tinggi': tinggiCm,
+    'berat': beratKg,
+    'bmi': bmi,
+    'kategori': kategori
+  });
 }
